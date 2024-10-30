@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Pair</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="relation">relation.<br>relation.</div>
+            <div class="pairname">PAIRNAME</div>
+            <div class="date">date.<br><span class="time">00.00</span></div>
+        </div>
+        <div class="characters">character name & character name & character name & character name</div>
+        <div class="character-cards">
+            <div class="character-card" id="Anima">
+                <div class="tag">
+                    <img src="strap.png" class="strap">
+                    <div class="circle">
+                    <div class="tag-circle"></div>
+                    <div class="tag-circle-inner"></div>
+                    </div>
+                    <div class="rectangles">
+                    <div class="tag-rectangle-top"></div>
+                    <div class="tag-rectangle">
+                        <div class="name">NAME</div>
+                        <div class="nickname">nickname</div>
+                        <div class="commission">ⓒ커미션출처</div>
+                    </div>
+                </div>    
+                </div>
+                <div class="info">  
+                    <div class="colorchips-container">
+                        <div class="colorchip" id="Acc1" style="background-color: red;"></div>
+                        <div class="colorchip" id="Acc2" style="background-color: blue;"></div>
+                    </div>
+                    <div class="details">Name<br><br><br><br><br><br>Male / Female<br>000cm, 00kg</div>
+                </div>
+            </div>
+            <div class="character-card" id="Mari">
+                <div class="tag">
+                    <img src="strap.png" class="strap">
+                    <div class="circle">
+                        <div class="tag-circle"></div>
+                        <div class="tag-circle-inner"></div>
+                        </div>
+                    <div class="tag-rectangle-top"></div>
+                    <div class="tag-rectangle">
+                        <div class="name">NAME</div>
+                        <div class="nickname">nickname</div>
+                        <div class="commission">ⓒ커미션출처</div>
+                    </div>    
+                </div>
+                <div class="info">   
+                    <div class="colorchips-container">
+                        <div class="colorchip" id="Acc1" style="background-color: red;"></div>
+                        <div class="colorchip" id="Acc2" style="background-color: blue;"></div>
+                    </div>
+                    <div class="details">Name<br><br><br><br><br><br>Male / Female<br>000cm, 00kg</div> 
+                </div>
+            </div>
+            <div class="character-card" id="Anne">
+                <div class="tag">
+                    <img src="strap.png" class="strap">
+                    <div class="circle">
+                        <div class="tag-circle"></div>
+                        <div class="tag-circle-inner"></div>
+                        </div>
+                    <div class="tag-rectangle-top"></div>
+                    <div class="tag-rectangle">
+                        <div class="name">NAME</div>
+                        <div class="nickname">nickname</div>
+                        <div class="commission">ⓒ커미션출처</div>
+                    </div>    
+                </div>
+                <div class="info">   
+                    <div class="colorchips-container">
+                        <div class="colorchip" id="Acc1" style="background-color: red;"></div>
+                        <div class="colorchip" id="Acc2" style="background-color: blue;"></div>
+                    </div>
+                    <div class="details">Name<br><br><br><br><br><br>Male / Female<br>000cm, 00kg</div>
+                </div>
+            </div>
+            <div class="character-card" id="Nevaeh">
+                <div class="tag">
+                    <img src="strap.png" class="strap">
+                    <div class="circle">
+                        <div class="tag-circle"></div>
+                        <div class="tag-circle-inner"></div>
+                        </div>
+                    <div class="tag-rectangle-top"></div>
+                    <div class="tag-rectangle">
+                        <div class="name">NAME</div>
+                        <div class="nickname">nickname</div>
+                        <div class="commission">ⓒ커미션출처</div>
+                    </div>    
+                </div>
+                <div class="info">   
+                    <div class="colorchips-container">
+                        <div class="colorchip" id="Acc1" style="background-color: red;"></div>
+                        <div class="colorchip" id="Acc2" style="background-color: blue;"></div>
+                    </div>
+                    <div class="details">Name<br><br><br><br><br><br>Male / Female<br>000cm, 00kg</div> 
+                </div>
+            </div>
+        </div>
+        <div class="triangle">
+            <img src="triangle_L.png" class="tri1">
+            <img src="triangle_R.png" class="tri2">
+        </div>
+        <div class="footer">
+            
+            <div class="keywords">
+            <div class="key1"><span class="key11">key.</span><br>#keyword #keyword #keyword</div>
+            <div class="sentence">write any sentence<br><span class="source">designed by @sunmicms</span></div>
+            <div class="key2"><span class="key22">key.</span><br>#keyword #keyword #keyword</div>
+            </div>
+            
+        </div>
+    </div>
+
+     <!-- Popup 및 배경 레이어 -->
+     <div class="popup-overlay" id="popupOverlay"></div>
+     <div class="popup" id="popup">
+         <div class="popup-content">
+
+            <span class="close-btn" id="closeBtn">&times;</span>
+        
+            <div class="pdiv1">
+                <div class="pdiv2">
+                    <div class="characterimg">여기에 이미지</div>
+                    <div class="pdiv3">
+                        <div class="ptitle">anima izaiah</div>
+                        <div class="pstitle">아니마 아이제이어</div>
+                        <div class="pimgs"></div>
+                        <div class="ptext">여기에 캐릭터 설명 여기에 캐릭터 설명 여기에 캐릭터 설명</div>
+                    </div>
+                </div>
+                <div class="pfooter">여기에다 뭐 쓰지 적당히 길고 간지나는거</div>
+
+
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
