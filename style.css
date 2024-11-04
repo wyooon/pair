@@ -15,12 +15,18 @@
 }
 
 
+
 /* 공통 스타일 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 html { font-size: 50%; }
@@ -32,6 +38,11 @@ body {
     min-height: 100vh;
     background-color: #f5f5f5;
 }
+
+
+
+
+
 
 .container {
     margin-top: 8vh;
@@ -51,7 +62,7 @@ body {
 }
 
 .characters { 
-    font-family: 'NanumSquareNeo';
+    font-family: 'NanumSquareNeo', 'Pretendard';
     font-size: 13px;
     color: #3C3C3C;
     text-align: center;
@@ -320,6 +331,8 @@ color: #afafaf;}
 .footer .sentence {
     font-family: "Thesignature";
     font-size: 50px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .footer .key {
@@ -331,6 +344,11 @@ color: #afafaf;}
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.key1box, .key2box { 
+    display: flex;
+    flex-direction: column;
 }
 
 .key1 {
@@ -348,19 +366,22 @@ color: #afafaf;}
 }
 
 .key11 { 
+    display: flex;
     font-family: 'NanumSquareNeo';
     font-weight: bold;
     font-size: 12px;
     color: #3C3C3C;
     text-align: left;
+    right: 20px;
 }
 
 .key22 {
+    display: flex;
     font-family: 'NanumSquareNeo';
     font-weight: bold;
     font-size: 12px;
     color: #3C3C3C;
-    text-align: right;
+    justify-content: end;
 
 }
 
@@ -371,15 +392,14 @@ color: #afafaf;}
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    top: 45vh;
     scale: 105%;
-    z-index: 2;
+    z-index: 3;
 }
 
 .swiper-button-prev, .swiper-button-next {
     scale: 40%;
     position: relative;
-    bottom: 125px;
+    top: 240px;
 }
 
 

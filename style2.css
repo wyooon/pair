@@ -387,23 +387,6 @@ color: #afafaf;}
 
 }
 
-.triangle {
-    position: absolute;
-    width: 100%;
-    max-width: 1300px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    top: 45vh;
-}
-
-.tri1 {
-    scale: 40%;
-}
-
-.tri2 {
-    scale: 40%;
-}
 
 /* 팝업 및 배경 레이어 스타일 */
 .popup-overlay {

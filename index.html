@@ -3,12 +3,24 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Swiper demo</title>
+  <title>PAIR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="swiper.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style2.css" />
+
+  <style>
+  .animate { 
+    position: relative; 
+    animation: fade_up 0.5s; 
+}
+
+@keyframes fade_up {
+    0% { opacity: 0; transform: translateY(100%); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+</style>
 
 </head>
 
@@ -17,11 +29,18 @@
 
   <div class="container">
     <div class="header">
-        <div class="relation">relation.<br><br><span class="relation2">relation.</span></div>
-        <div class="pairname">AMEN</div>
-        <div class="date">date.<br><br><span class="time">00.00</span></div>
+        <div class="relation">relation.<br><br><span class="relation2" id="relationid">friends</span></div>
+        <div class="pairname" ID="pairid">AMEN</div>
+        <div class="date">date.<br><br><span class="time" id="dateid">240308</span></div>
     </div>
-    <div class="characters">character name & character name & character name & character name</div>
+    <div class="characters" id="charactersid">Anima Izaiah & Mari Aiyana & Enarulphne  P. Aisha & Nevaeh</div>
+
+ <!--스와이프 화살표 버튼-->
+
+ <div class="triangle">
+    <img src="triangle_L.png" class="swiper-button-prev" id="swb">
+    <img src="triangle_R.png" class="swiper-button-next" id="swn">
+</div>
 
   <!-- Swiper -->
   <div class="swiper mySwiper">
@@ -384,12 +403,7 @@
 
     
 
-<!--스와이프 화살표 버튼-->
 
-    <div class="triangle">
-      <img src="triangle_L.png" class="swiper-button-prev">
-      <img src="triangle_R.png" class="swiper-button-next">
-  </div>
 
 
   <!--아래 푸터 부분-->
@@ -397,10 +411,21 @@
   <div class="footer">
             
     <div class="keywords">
-    <div class="key1"><span class="key11">key.</span><br><br>#keyword #keyword #keyword</div>
-    <div class="sentence">write any sentence</div>
-    <div class="key2"><span class="key22">key.</span><br><br>#keyword #keyword #keyword</div>
+        <div class="key1box">
+            <div><span class="key11">key.<br>ㅤ</span></div>
+            <div class="key1" id="key1id">#keyword #keyword #keyword</div>
+        </div>
+
+        <div class="sentence" id="senid">write any sentence</div>
+  
+
+        <div class='key2box'>
+            <div><span class="key22">key.<br>ㅤ</span></div>
+            <div class="key2" id="key2id">#keyword #keyword #keyword</div>
+        </div>
+        
     </div>
+
     <div class="source">designed by @sunmicms</div>
 </div>
 </div>
@@ -460,6 +485,74 @@
       },
     });
   </script>
+
+  <!--버튼 클릭 시 바뀌는 타이틀-->
+
+  <script>
+    const textElement = document.getElementById('pairid');
+    const subtitleElement = document.getElementById('charactersid');
+    const relationElement = document.getElementById('relationid');
+    const dateElement = document.getElementById('dateid');
+    const key1Element = document.getElementById('key1id');
+    const key2Element = document.getElementById('key2id');
+    const senElement = document.getElementById('senid');
+    const nextButton = document.getElementById('swn');
+    const prevButton = document.getElementById('swb');
+
+
+    // 텍스트와 부제목 배열
+    const words = ['amen', 'beshal', 'tereial', 'kiss', 'serendipity', 'pata'];
+    const subtitles = ['Anima Izaiah & Mari Aiyana & Enarulphne  P. Aisha & Nevaeh', 'Benedict Von Obadiah ♥ Shalit', 'Terrence Arvid & Lael E. Adelheid', 'Nathaniel Quentin ♥ Celestite Dream', 'Nasar ♥ Corone', 'Parviz ♥ Tahar Canet'];
+    const relations = ['friends','Lovers','Unrequited love','Lovers','Companion','Lovers?'];
+    const dates = ['240308','200825','200326','210419','231031','240709'];
+    const key1s = ['#Knights #Otium #Hominis','#Soldier #Norma #Captain','#Nobility #Duke #Adelheid','#Soldier #X-Force #SSSLank','#Villain #Devil #Witch','#Terra #Florist #Professor'];
+    const key2s = ['Justice #Strength #Mercy','#Gamble #incongruity #Fake','#Onesided #Regret #Friends?','#Highteen #Hero #Cohabitation','#Fortune #Fate #Eternity','#Kinship #Dependence #Upbringing'];
+    const sens = ['Acta Est Fabula','Volente Deo','OC Pair','Deus Ex Machina','I don`t Want this Kind of Hero','Astir'];
+    let currentIndex = 0;
+
+    // 텍스트와 부제목 업데이트 함수
+    function updateText() {
+        textElement.textContent = words[currentIndex];
+        subtitleElement.textContent = subtitles[currentIndex];
+        relationElement.textContent = relations[currentIndex];
+        dateElement.textContent = dates[currentIndex];
+        key1Element.textContent = key1s[currentIndex];
+        key2Element.textContent = key2s[currentIndex];
+        senElement.textContent = sens[currentIndex];
+
+        // 애니메이션 초기화 후 다시 적용
+        textElement.classList.remove('animate');
+        subtitleElement.classList.remove('animate');
+        relationElement.classList.remove('animate');
+        dateElement.classList.remove('animate');
+        key1Element.classList.remove('animate');
+        key2Element.classList.remove('animate');
+        senElement.classList.remove('animate');
+        void textElement.offsetWidth; // 리플로우 발생
+        textElement.classList.add('animate');
+        subtitleElement.classList.add('animate');
+        relationElement.classList.add('animate');
+        dateElement.classList.add('animate');
+        key1Element.classList.add('animate');
+        key2Element.classList.add('animate');
+        senElement.classList.add('animate');
+    }
+
+    // 버튼 이벤트 리스너
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % words.length;
+        updateText();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + words.length) % words.length;
+        updateText();
+    });
+
+    
+</script>
+
+
 </body>
 
 </html>
