@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('PretendardVariable.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url('NanumSquareNeo-Variable.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Thesignature';
+    src: url('Thesignature.ttf') format('truetype');
+}
 
 
 /* 공통 스타일 */
@@ -36,7 +51,7 @@ body {
 }
 
 .characters { 
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-size: 13px;
     color: #3C3C3C;
     text-align: center;
@@ -44,7 +59,7 @@ body {
  }
 
 .relation {
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-weight: bold;
     font-size: 12px;
     color: #3C3C3C;
@@ -52,7 +67,7 @@ body {
 }
 
 .date {
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-weight: bold;
     font-size: 12px;
     color: #3C3C3C;
@@ -61,7 +76,7 @@ body {
 
 
 .relation2, .time {
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-size: 10px;
     color: #3C3C3C;   
 }
@@ -240,6 +255,7 @@ body {
 
 .commission {
     font-family: 'pretendard';
+    font-weight: 200;
     font-size: 13px;
     position: relative;
     rotate: 90deg;
@@ -248,7 +264,7 @@ body {
 }
 
 .details {
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-size: 11px;
     color: #888;
     position: relative;
@@ -259,7 +275,7 @@ body {
 }
 
 .dename {
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-weight: bold;
     font-size: 14px;
     color: #3C3C3C;
@@ -318,21 +334,21 @@ color: #afafaf;}
 }
 
 .key1 {
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-size: 10px;
     color: #3C3C3C;   
     text-align: left;
 }
 
 .key2 {
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-size: 10px;
     color: #3C3C3C;   
     text-align: right;
 }
 
 .key11 { 
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-weight: bold;
     font-size: 12px;
     color: #3C3C3C;
@@ -340,7 +356,7 @@ color: #afafaf;}
 }
 
 .key22 {
-    font-family: 'NanumSquare Neo OTF';
+    font-family: 'NanumSquareNeo';
     font-weight: bold;
     font-size: 12px;
     color: #3C3C3C;
@@ -350,21 +366,23 @@ color: #afafaf;}
 
 .triangle {
     position: absolute;
-    width: 100%;
+    width: 1500%; 
     max-width: 1300px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     top: 45vh;
+    scale: 105%;
+    z-index: 2;
 }
 
-.tri1 {
+.swiper-button-prev, .swiper-button-next {
     scale: 40%;
+    position: relative;
+    bottom: 125px;
 }
 
-.tri2 {
-    scale: 40%;
-}
+
 
 /* 팝업 및 배경 레이어 스타일 */
 .popup-overlay {
@@ -481,6 +499,7 @@ margin-left: 20px; }
 
 .ptitle { 
     font-family: 'Pretendard';
+    font-weight: 800;
     font-size: 50px;
     margin-top: 10px;
     }
@@ -522,7 +541,6 @@ margin-left: 20px; }
     font-family: 'pretendard';
     font-size: 14px;
     font-weight: 300;
-    margin-left: 65px;
 }
 
 span {
@@ -543,20 +561,67 @@ span {
  }
 
  
-/* 캐릭터마다 다른 그림자 */
-.character-card#Anima .characterimg {
+/* 각 캐릭터별 그림자 색상 */
+.anima-shadow {
     filter: drop-shadow(10px -5px #6D7FF5);
 }
 
-.character-card#Mari .characterimg {
-    filter: drop-shadow(10px -5px #FFC5D3);
+.mari-shadow {
+    filter: drop-shadow(10px -5px #FF9999);
 }
 
-.character-card#Anne .characterimg {
-    filter: drop-shadow(10px -5px #6D7FF5);
+.anne-shadow {
+    filter: drop-shadow(10px -5px #eab6ff);
 }
 
-.character-card#Nevaeh .characterimg {
-    filter: drop-shadow(10px -5px #6D7FF5);
+.nevaeh-shadow {
+    filter: drop-shadow(10px -5px #09ec24);
 }
 
+
+/* 앤님 팝업 글자색 */
+
+.anne-subtitle-color, .anne-description-color, .anne-text-color {
+    color: #342d3b; 
+}
+
+.mari-subtitle-color, .mari-description-color, .mari-text-color {
+    color: #ffffff; 
+}
+
+/* 슬라이딩 효과를 위한 CSS 클래스 */
+.slide-in-right {
+    animation: slideInRight 0.5s forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s forwards;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* character-cards 초기 상태 설정 */
+.character-cards {
+    position: relative;
+    transition: transform 0.5s ease;
+}

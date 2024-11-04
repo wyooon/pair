@@ -1,36 +1,26 @@
-/* document.addEventListener("DOMContentLoaded", function() {
-    const popupOverlay = document.getElementById("popupOverlay");
-    const popup = document.getElementById("popup");
-    const closeBtn = document.getElementById("closeBtn");
-
-    // 태그 클릭 시 팝업 열기
-    document.querySelectorAll(".tag").forEach(tag => {
-        tag.addEventListener("click", function() {
-            popupOverlay.style.display = "block";
-            popup.style.display = "block";
-        });
-    });
-
-    // 팝업 닫기
-    closeBtn.addEventListener("click", function() {
-        popupOverlay.style.display = "none";
-        popup.style.display = "none";
-    });
-
-    // 배경 클릭 시 팝업 닫기
-    popupOverlay.addEventListener("click", function() {
-        popupOverlay.style.display = "none";
-        popup.style.display = "none";
-    });
-});
-
-*/
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const popupOverlay = document.getElementById("popupOverlay");
     const popup = document.getElementById("popup");
     const closeBtn = document.getElementById("closeBtn");
+
+    document.querySelectorAll(".triangle img").forEach((triangle, index) => {
+        triangle.addEventListener("click", function() {
+            // character-cards에 슬라이딩 효과 추가
+            const characterCards = document.querySelector(".character-cards");
+
+            if (index === 0) { // tri1 클릭
+                characterCards.classList.add("slide-in-right");
+                setTimeout(() => {
+                    window.location.href = "pata.html";
+                }, 500); // 애니메이션 지속 시간과 동일하게 설정
+            } else if (index === 1) { // tri2 클릭
+                characterCards.classList.add("slide-in-left");
+                setTimeout(() => {
+                    window.location.href = "beshal.html";
+                }, 500); // 애니메이션 지속 시간과 동일하게 설정
+            }
+        });
+    });
 
     // 캐릭터 카드의 정보 데이터
     const characterData = {
@@ -38,58 +28,88 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "<span style='color: #6D7FF5;'>A</span>nima izaiah",
             subTitle: "아니마 아이제이어",
             description: "Cornua | Pugna | Male | 186cm, 80kg",
-            text: "오티움 기사단 전투부 푸냐의 제 3부대 대장이고, 암튼 잘생겼고, ㅈㄴ 짱 쎄고 멋있고 제비고 대단한 단나사마임 맨손으로 돌도 부수고 칼 맞아도 멀쩡한 세계관상의 금강불괴 그것이 '코르누아' <br><br> 그리고 여기다가는 마리 니베이아 앤이랑 각각 관계가 어떤지 써둘까",
+            text: "오티움 기사단 전투부 푸냐의 제 3부대 대장이고, 암튼 잘생겼고, ㅈㄴ 짱 쎄고 멋있고 제비고 대단한 단나사마임 맨손으로 돌도 부수고 칼 맞아도 멀쩡한 세계관상의 금강불괴 그것이 코르누아... <br><br> 그리고 여기다가는 마리 니베이아 앤이랑 각각 관계가 어떤지 써둘까",
             footer: "여기다가 진짜 뭐 써야 하냐 아이디어 있는 사람 제발 plz",
             image: "anima.png",
-            bgClass: "anima-bg"
+            bgClass: "anima-bg",
+            imgShadow: "anima-shadow",
+            subTitleColorClass: "anima-subtitle-color",
+            descriptionColorClass: "anima-description-color",
+            textColorClass: "anima-text-color"
         },
         Mari: {
-            title: "<span style='color: #FF9999;'>M</span>ari name",
-            subTitle: "마리 이름",
-            description: "Another class | Role | Female | 165cm, 50kg",
-            text: "마리는 온화하고 상냥한 성격을 가진 인물입니다. 자주 꽃을 꺾어 친구들에게 주고, 따뜻한 미소로 모두에게 힘이 되는 캐릭터입니다. 그녀의 친구들은 마리의 이러한 따뜻한 성격 덕분에 그녀를 항상 신뢰합니다.",
-            footer: "마리와 관련된 추가 정보",
+            title: "<span style='color: #FF9999;'>M</span>ari Aiyana",
+            subTitle: "마리 아이아나",
+            description: "Sanitasia | Medicus | Female | 162cm, 55kg",
+            text: "어쩌고 저쩌고 설명 나중에 적을게요 뭐 적어야함? 착하고요 거지고요 힐러고요 소녀고요 에휴... 모르겠다 나도",
+            footer: "여기다가 진짜 뭐 써야 하냐 아이디어 있는 사람 제발 plz",
             image: "mari.png",
-            bgClass: "mari-bg"
+            bgClass: "mari-bg",
+            imgShadow: "mari-shadow",
+            subTitleColorClass: "mari-subtitle-color",
+            descriptionColorClass: "mari-description-color",
+            textColorClass: "mari-text-color"
         },
         Anne: {
-            title: "<span style='color: #FFDD57;'>A</span>nne name",
-            subTitle: "앤 이름",
-            description: "Mage | Sorcerer | Female | 170cm, 55kg",
-            text: "앤은 강력한 마법사로, 냉철한 성격을 가지고 있습니다. 그녀의 능력은 단순한 마법 이상으로, 고대의 비밀을 다루고 있습니다. 그녀는 비밀스러운 과거와 독특한 마법 지식을 가지고 있으며, 위험한 임무에 자주 참여합니다.",
-            footer: "앤의 마법과 관련된 정보",
+            title: "<span style='color: #6b12a9;'>E</span><span style='color: #342d3b'>narulphne P. Aisha</span>",
+            subTitle: "에나룰프네 파나세아 아이샤",
+            description: "Cornua | Obrepo | Female | 176cm, 62kg",
+            text: "존나 공주 존나 귀족이고 존나 공설미인이고 관운장이고 은교고 다 부수고 개 아름다우시고 우아하시고",
+            footer: "여기다가 진짜 뭐 써야 하냐 아이디어 있는 사람 제발 plz",
             image: "anne.png",
-            bgClass: "anne-bg"
+            bgClass: "anne-bg",
+            imgShadow: "anne-shadow",
+            subTitleColorClass: "anne-subtitle-color",
+            descriptionColorClass: "anne-description-color",
+            textColorClass: "anne-text-color"
         },
         Nevaeh: {
-            title: "<span style='color: #A5D6A7;'>N</span>evaeh name",
-            subTitle: "네바에 이름",
-            description: "Warrior | Protector | Male | 190cm, 90kg",
-            text: "네바에는 보호자 역할을 맡고 있으며, 항상 팀원들을 지키는 강력한 전사입니다. 그는 무뚝뚝하지만, 친구들에게 깊은 애정을 가지고 있으며, 상황이 어려울 때도 포기하지 않는 불굴의 의지를 보여줍니다.",
-            footer: "네바에의 전투력과 팀에 대한 충성심",
+            title: "<span style='color: #A5D6A7;'>N</span>evaeh",
+            subTitle: "니베이아",
+            description: "Gladiusia | Pugna | Female | 176cm, 72kg",
+            text: "엑소고 빅스고 섹시머신이고 ㅈㄴ 소드마스터 무협지 상여자 미쳤고 아 몰라 나중에 적겠습니다 이러쿵 저러쿵 텍스트 채우는 중",
+            footer: "여기다가 진짜 뭐 써야 하냐 아이디어 있는 사람 제발 plz",
             image: "nevaeh.png",
-            bgClass: "nevaeh-bg"
+            bgClass: "nevaeh-bg",
+            imgShadow: "nevaeh-shadow",
+            subTitleColorClass: "nevaeh-subtitle-color",
+            descriptionColorClass: "nevaeh-description-color",
+            textColorClass: "nevaeh-text-color"
         }
     };
 
     // 태그 클릭 시 팝업 열기 및 내용 설정
     document.querySelectorAll(".tag").forEach(tag => {
         tag.addEventListener("click", function() {
-            const characterId = this.closest(".character-card").id;
+            const characterId = this.closest(".character-card").id; // id 값 가져오기
+            console.log("characterId:", characterId); // 디버깅용 콘솔 출력
             const data = characterData[characterId];
 
             if (data) {
                 // 팝업 내용 설정
                 document.querySelector(".ptitle").innerHTML = data.title;
                 document.querySelector(".pstitle").textContent = data.subTitle;
+                document.querySelector(".pstitle").className = "pstitle"; // 기존 클래스 초기화 후 추가
+                document.querySelector(".pstitle").classList.add(data.subTitleColorClass || "");
+
                 document.querySelector(".pdescription").textContent = data.description;
+                document.querySelector(".pdescription").className = "pdescription"; // 기존 클래스 초기화 후 추가
+                document.querySelector(".pdescription").classList.add(data.descriptionColorClass || "");
+
                 document.querySelector(".ptext").innerHTML = data.text;
+                document.querySelector(".ptext").className = "ptext"; // 기존 클래스 초기화 후 추가
+                document.querySelector(".ptext").classList.add(data.textColorClass || "");
+
                 document.querySelector(".pfooter").textContent = data.footer;
                 document.querySelector(".characterimg img").src = data.image;
 
-                // 기존 배경색 클래스 제거하고 새로운 클래스 추가
-                popup.classList.remove("anima-bg", "mari-bg", "anne-bg", "nevaeh-bg");
+                // 기존 배경색 및 그림자 클래스 제거하고 새로운 클래스 추가
+                popup.className = "popup"; // 기존 클래스 초기화
                 popup.classList.add(data.bgClass);
+
+                const characterImg = document.querySelector(".characterimg img");
+                characterImg.className = ""; // 기존 그림자 클래스 초기화
+                characterImg.classList.add(data.imgShadow);
 
                 // 팝업 보이기
                 popupOverlay.classList.add("active");
@@ -110,32 +130,5 @@ document.addEventListener("DOMContentLoaded", function() {
     popupOverlay.addEventListener("click", function() {
         popupOverlay.classList.remove("active");
         popup.classList.remove("active");
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const popupOverlay = document.getElementById("popupOverlay");
-    const popup = document.getElementById("popup");
-    const closeBtn = document.getElementById("closeBtn");
-
-    // 태그 클릭 시 팝업 열기
-    document.querySelectorAll(".tag").forEach(tag => {
-        tag.addEventListener("click", function() {
-            popupOverlay.classList.add("active");
-            popup.style.display = "block";
-        });
-    });
-
-    // 팝업 닫기
-    closeBtn.addEventListener("click", function() {
-        popupOverlay.classList.remove("active");
-        popup.style.display = "none";
-    });
-
-    // 배경 클릭 시 팝업 닫기
-    popupOverlay.addEventListener("click", function() {
-        popupOverlay.classList.remove("active");
-        popup.style.display = "none";
     });
 });

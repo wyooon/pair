@@ -1,0 +1,611 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('PretendardVariable.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url('NanumSquareNeo-Variable.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Thesignature';
+    src: url('Thesignature.ttf') format('truetype');
+}
+
+
+/* 공통 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html { font-size: 50%; }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    margin-top: 8vh;
+    width: 80%;
+    max-width: 1300px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 8vh;
+}
+
+/* 헤더 및 캐릭터 이름 */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.characters { 
+    font-family: 'NanumSquareNeo';
+    font-size: 13px;
+    color: #3C3C3C;
+    text-align: center;
+    margin: 5px;
+ }
+
+.relation {
+    font-family: 'NanumSquareNeo';
+    font-weight: bold;
+    font-size: 12px;
+    color: #3C3C3C;
+    text-align: left;
+}
+
+.date {
+    font-family: 'NanumSquareNeo';
+    font-weight: bold;
+    font-size: 12px;
+    color: #3C3C3C;
+    text-align: right;
+}
+
+
+.relation2, .time {
+    font-family: 'NanumSquareNeo';
+    font-size: 10px;
+    color: #3C3C3C;   
+}
+
+.header .pairname {
+    font-family: 'sought';
+    font-size: 70px;
+    color: #3c3c3c;
+}
+
+
+/* 캐릭터 카드 섹션 */
+.pair2 .character-cards {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    height: 55rem;
+    flex-shrink: 0;
+    width: 70%;
+    margin-left: 150px;
+    scale: 100%;
+}
+
+
+.pair2 .character-card {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tag {
+    height: 90rem;
+    position: relative;
+    
+}
+
+.tag {
+    transition: transform 0.3s ease; /* 애니메이션 효과 추가 */
+}
+
+.tag:hover {
+    transform: scale(1.05); /* 마우스오버 시 약간 확대 */
+}
+
+.strap {
+    position: absolute;
+    scale: 45%;
+    top: 105px;
+    right: 50px;
+    z-index: 10;
+}
+
+
+.circle:hover {
+    transform-origin: 50% 50%;
+    animation-name: shake;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+  }
+  
+  @keyframes shake{
+    0%{
+        transform: rotate(0deg);
+      }
+      10%{
+        transform: rotate(4.5deg);
+      }
+      20%{
+        transform: rotate(-4.5deg);
+      }
+      30%{
+        transform: rotate(3deg);
+      }
+      40%{
+        transform: rotate(-3deg);
+      }
+      50%{
+        transform: rotate(1deg);
+      }
+      60%{
+        transform: rotate(-1deg);
+      }
+      70%{
+        transform: rotate(0deg);
+      }
+      100%{
+        transform: rotate(0deg);
+      }
+  }
+
+
+.tag-circle {
+    width: 20.856rem;
+    height: 28.89256rem;
+    transform: rotate(20.374deg);
+    flex-shrink: 0;
+    background-color: #333;
+    border-radius: 50%;
+    margin-bottom: -10px;
+    position: relative;
+    top: 210px;
+    right: 50px;
+    scale: 105%;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    box-shadow: 0 0 0 2px #f4f4f4 inset; 
+    box-sizing: border-box;
+    border: 5px solid #333;
+}
+
+
+
+.tag-circle-inner {
+    display: none;
+    width: 19.75719rem;
+    height: 27.50506rem;
+    transform: rotate(20.374deg);
+    flex-shrink: 0;
+    z-index: 2;
+    border-radius: 999%;
+    border: 1px solid #FFF;
+    position: absolute;
+    right: 59px;
+    bottom: 285px;
+    scale: 103%;
+}
+
+.tag-rectangle-top { 
+    width: 21.4375rem;
+    height: 8.25rem;
+    flex-shrink: 0; 
+    display: inline-block;
+    border-bottom: 10rem solid #ddd;
+    border-left: 5rem solid transparent;
+    border-right: 5rem solid transparent;
+    position: relative;
+    top: 2px;
+    z-index: -1;
+    filter: drop-shadow(5px 15px 10px rgba(0, 0, 0, 0.3));
+}
+
+.tag-rectangle {
+    background-color: #ddd;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+    top: -1px;
+    width: 21.4375rem;
+    height: 45rem;
+    flex-shrink: 0;
+    z-index: -1;
+    overflow: hidden;
+    filter: drop-shadow(5px 15px 10px rgba(0, 0, 0, 0.3));
+}
+
+.name {
+    font-family: 'sought';
+    font-size: 60px;
+    position: relative;
+    text-align: right;
+    top: 128px;
+    left: 52px;
+    rotate: 90deg;
+}
+
+.nickname {
+    font-family: 'Thesignature';
+    position: relative;
+    font-size: 50px;
+    font-style: italic;
+    margin-bottom: 10px;
+    rotate: 90deg;
+    left: 10px;
+    top: 165px;
+    text-align: right;
+}
+
+.commission {
+    font-family: 'pretendard';
+    font-weight: 200;
+    font-size: 13px;
+    position: relative;
+    rotate: 90deg;
+    top: 220px;
+    right: 70px;
+}
+
+.pair2 .details {
+    font-family: 'NanumSquareNeo';
+    font-size: 11px;
+    color: #888;
+    position: relative;
+    top: 245px;
+    width: 90px;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.pair2 .details-L {
+    font-family: 'NanumSquareNeo';
+    font-size: 11px;
+    color: #888;
+    position: relative;
+    top: 245px;
+    width: 90px;
+    text-align: right;
+    margin-right: 15px;
+}
+
+.dename {
+    font-family: 'NanumSquareNeo';
+    font-weight: bold;
+    font-size: 14px;
+    color: #3C3C3C;
+}
+
+/* colorchip 스타일 추가 */
+.colorchip {
+    width: 20px; /* 색상 박스의 너비 */
+    height: 20px; /* 색상 박스의 높이 */
+    margin: 2px; /* 색상 박스 사이의 간격 */
+    margin-left: 8px;
+}
+
+.info {
+    font-family: 'pretendard';
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    position: relative;
+}
+
+.colorchips-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* 두 색상 박스 사이의 간격 */
+    margin-left: 10px;
+    margin-top: 268px;
+}
+
+.colorchips-container-L {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* 두 색상 박스 사이의 간격 */
+    margin-left: 10px;
+    margin-top: 268px;
+    left: 52px;
+}
+
+.source { font-family: 'pretendard';
+    font-size: 10px;
+color: #afafaf;}
+
+.footer {
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .sentence {
+    font-family: "Thesignature";
+    font-size: 50px;
+}
+
+.footer .key {
+    font-size: 12px;
+    color: #888;
+}
+
+.keywords {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.key1 {
+    font-family: 'NanumSquareNeo';
+    font-size: 10px;
+    color: #3C3C3C;   
+    text-align: left;
+}
+
+.key2 {
+    font-family: 'NanumSquareNeo';
+    font-size: 10px;
+    color: #3C3C3C;   
+    text-align: right;
+}
+
+.key11 { 
+    font-family: 'NanumSquareNeo';
+    font-weight: bold;
+    font-size: 12px;
+    color: #3C3C3C;
+    text-align: left;
+}
+
+.key22 {
+    font-family: 'NanumSquareNeo';
+    font-weight: bold;
+    font-size: 12px;
+    color: #3C3C3C;
+    text-align: right;
+
+}
+
+.triangle {
+    position: absolute;
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 45vh;
+}
+
+.tri1 {
+    scale: 40%;
+}
+
+.tri2 {
+    scale: 40%;
+}
+
+/* 팝업 및 배경 레이어 스타일 */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* 초기 상태 투명 */
+    display: none;
+    transition: background-color 0.3s ease; /* 부드러운 전환 */
+    z-index: 5;
+}
+
+/* 팝업 오버레이 활성화 시 어두운 배경 */
+.popup-overlay.active {
+    background-color: rgba(0, 0, 0, 0.5); /* 활성 상태 반투명 검정 */
+    display: block;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 121.9375rem;
+    height: 68.8125rem;
+    flex-shrink: 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1001;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* 기본 팝업 스타일 */
+.popup {
+    display: flex;
+    width: 60%;
+    max-width: 1000px;
+    background-color: #ffffff; /* 기본 배경색 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* 캐릭터별 배경색 */
+.popup.anima-bg {
+    background-color: #454545; /* Anima 배경색 */
+}
+
+.popup.mari-bg {
+    background-color: #83D4D1; /* Mari 배경색 */
+}
+
+.popup.anne-bg {
+    background-color: #E6EFFA; /* Anne 배경색 */
+}
+
+.popup.nevaeh-bg {
+    background-color: #93C094; /* Nevaeh 배경색 */
+}
+
+/* 기본적으로 팝업이 보이지 않도록 설정 */
+.popup, .popup-overlay {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* active 클래스가 추가될 때 팝업을 보이도록 설정 */
+.popup.active, .popup-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+
+.close-btn { margin-right: 5px; color: #f4f4f4;}
+
+.pdiv1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.pdiv2 { 
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    color: #f4f4f4;
+}
+
+.characterimg {
+    position: relative;
+    width: 350px;
+    height: 100%;
+    right: 30px;
+}
+
+.pdiv3 { width: 500px;
+    text-align: left;
+margin-left: 20px; }
+
+.ptitle { 
+    font-family: 'Pretendard';
+    font-weight: 800;
+    font-size: 50px;
+    margin-top: 10px;
+    }
+
+.pstitle {
+    font-family: 'pretendard';
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.pdescription {
+    font-family: 'pretendard';
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.pimgs { 
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 450px;
+    margin-top: 10px;
+}
+
+.img1, .img2, .img3 {
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+    background-color: #f4f4f4;
+    border-radius: 999px;
+}
+
+.ptext {    
+    width: 400px; 
+    margin-top: 20px;
+    font-family: 'pretendard';
+    font-size: 14px;
+    font-weight: 300;
+}
+
+span {
+    font-family: 'Pretendard';
+    font-size: 50px;
+    }
+
+/* .characterimg { 
+    filter: drop-shadow(10px -5px #6D7FF5);
+} */
+
+.pfooter { 
+    z-index: 2;
+    font-family: 'pretendard';
+    font-size: 12px;
+    font-weight: 200;
+    color: #979797;
+ }
+
+ 
+/* 각 캐릭터별 그림자 색상 */
+.anima-shadow {
+    filter: drop-shadow(10px -5px #6D7FF5);
+}
+
+.mari-shadow {
+    filter: drop-shadow(10px -5px #FF9999);
+}
+
+.anne-shadow {
+    filter: drop-shadow(10px -5px #eab6ff);
+}
+
+.nevaeh-shadow {
+    filter: drop-shadow(10px -5px #09ec24);
+}
+
+
+/* 앤님 팝업 글자색 */
+
+.anne-subtitle-color, .anne-description-color, .anne-text-color {
+    color: #342d3b; 
+}
+
+.mari-subtitle-color, .mari-description-color, .mari-text-color {
+    color: #ffffff; 
+}
